@@ -14,15 +14,39 @@
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 0 auto;
 }
 
-.App-intro {
-  font-size: large;
+input {
+  padding: 10px 5px;
+  margin: 2%;
+  font-size: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+button {
+  padding: 10px 5px;
+  margin: 2%;
+  font-size: 1.5rem;
+}
+
+.smurfList {
+  display: flex;
+  flex-direction: column;
+}
+
+.smurf-container {
+display: flex;
+flex-wrap: wrap;
+}
+
+.smurf {
+  border: 1px solid red;
+  background-color: blue;
+  color: aliceblue;
+  margin: 1%;
+  width: 22%;
 }
