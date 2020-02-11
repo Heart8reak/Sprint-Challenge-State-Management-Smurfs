@@ -3,12 +3,13 @@ import Smurf from './Smurf'
 
 const SmurfList = props => {
     return (
-        <ul>
+        <div className="smurf-container">
             {props.smurfs.characters.map(smurf => {
                 return <Smurf key={smurf.name} smurf={smurf} />
             })}
             {console.log(props)}
-        </ul>
+        </div>
+
     )
 }
 

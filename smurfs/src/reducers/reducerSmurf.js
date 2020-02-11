@@ -1,5 +1,4 @@
 import {
-    ADD_SMURF,
     ADD_SMURF_SUCCESS,
     ADD_SMURF_FAILED,
     FETCH_DATA,

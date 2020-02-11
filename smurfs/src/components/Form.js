@@ -96,7 +96,4 @@ const mapStateToProps = (state) => ({
     error: state.error
 })
 
-export default withRouter(connect(
-    mapStateToProps,
-    mapDispatchToProps)
-    (Form))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Form))

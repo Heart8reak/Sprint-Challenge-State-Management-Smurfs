@@ -38,6 +38,15 @@ button {
   flex-direction: column;
 }
 
-li {
-  text-decoration: none;
+.smurf-container {
+display: flex;
+flex-wrap: wrap;
+}
+
+.smurf {
+  border: 1px solid red;
+  background-color: blue;
+  color: aliceblue;
+  margin: 1%;
+  width: 22%;
 }
