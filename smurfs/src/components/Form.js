@@ -13,25 +13,31 @@ class Form extends React.Component {
             height: ''
         }
     }
+    handleSubmit = () => {
 
+    }
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
-
     createSmurf = (e) => {
         e.preventDefault()
-
         const { name, age, height } = this.state
-
         this.props.addSmurf(name, age, height)
-            .then(() => {
-                this.props.history.push('/smurfs')
-            })
+            // .then(() => {
+            //     this.props.history.push('/smurfs')
+            // })
             .catch((err => {
                 console.log(err)
             }))
+        this.setState = {
+            name: '',
+            age: '',
+            height: '',
+
+            // id: Date.now()
+        }
     }
 
     render() {
@@ -41,7 +47,8 @@ class Form extends React.Component {
         return (
             <form
                 className="form"
-                onSubmit={this.createSmurf}>
+                onSubmit={this.createSmurf}
+            >
                 {error && <p className='error'>
                     {}error</p>}
 
@@ -69,11 +76,13 @@ class Form extends React.Component {
                     onChange={this.handleChange}
                 />
                 <br />
-                {fetchingSmurfs ? <p>Loading...</p> :
-                    <button type="submit">
-                        Create Smurf
-                </button>}
-            </form>
+                {
+                    fetchingSmurfs ? <p>Loading...</p> :
+                        <button type="submit">
+                            Create Smurf
+                </button>
+                }
+            </form >
         )
     }
 }

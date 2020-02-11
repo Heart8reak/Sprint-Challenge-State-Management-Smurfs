@@ -9,50 +9,52 @@ import {
 
 const initialState = {
     smurfs: [],
-    fetchingSmurfs: false,
+    // fetchingSmurfs: false,
     addingSmurf: false,
     error: null
 }
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case ADD_SMURF: {
-            return {
-                ...state,
-                fetchingSmurfs: true
-            }
-        }
+        // case ADD_SMURF: {
+        //     return {
+        //         ...state,
+        //         // fetchingSmurfs: true
+        //     }
+        // }
         case ADD_SMURF_SUCCESS: {
             return {
-                ...state, fetchingSmurfs: false,
-                error: null
+                ...state,
+                // fetchingSmurfs: false,
+                smurfs: action.payload
             }
         }
         case ADD_SMURF_FAILED: {
             return {
-                ...state, fetchingSmurfs: false,
+                ...state,
+                // fetchingSmurfs: false,
                 error: action.payload
             }
         }
         case FETCH_DATA: {
             return {
                 ...state,
-                fetchingSmurfs: true,
+                // fetchingSmurfs: true,
                 error: action.payload
             }
         }
         case SUCCESS: {
             return {
                 ...state,
-                fetchingSmurfs: false,
-                error: null,
-                smurfs: [...state.smurfs, ...action.payload]
+                // fetchingSmurfs: false,
+                error: action.payload,
+                smurfs: action.payload
             }
         }
         case FAILURE: {
             return {
                 ...state,
-                fetchingSmurfs: false,
+                // fetchingSmurfs: false,
                 error: action.payload
             }
         }

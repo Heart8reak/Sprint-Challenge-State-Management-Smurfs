@@ -12,10 +12,9 @@ export const FAILURE = "FAILURE"
 export function addSmurf(name, age, height) {
     return (dispatch) => {
         dispatch({ type: ADD_SMURF })
-
         return axios.post('http://localhost:3333/smurfs', { name, age, height })
-            .then(() => {
-                dispatch({ type: ADD_SMURF_SUCCESS })
+            .then((res) => {
+                dispatch({ type: ADD_SMURF_SUCCESS, payload: res.data })
             })
             .catch((err) => {
                 const payload = err.response ? err.response.data : err
